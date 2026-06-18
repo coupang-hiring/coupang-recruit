@@ -40,8 +40,22 @@
  .footer { text-align: center; color: #999; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
  .summary { background: #f0f4ff; border: 1px solid #c8d6f0; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
  .summary li { margin-bottom: 2px; font-size: 14px; }
- .watermark { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
- .watermark canvas { width: 100%; height: 100%; }
+ /* 全屏水印：用 SVG 背景而非 fixed canvas，避免 iPhone 截长图变形 */
+ html { position: relative; }
+ body { position: relative; }
+ body::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -20px;
+   right: -20px;
+   bottom: 0;
+   pointer-events: none;
+   z-index: 9999;
+   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200' viewBox='0 0 340 200'><text x='170' y='100' fill='rgba(0,0,0,0.13)' font-size='15' font-weight='600' font-family='Arial,sans-serif' text-anchor='middle' dominant-baseline='middle' transform='rotate(-22 170 100)'>%E5%86%85%E6%8E%A8%E9%82%AE%E7%AE%B1%EF%BC%9Auger501%40foxmail.com</text></svg>");
+   background-repeat: repeat;
+   background-size: 340px 200px;
+ }
 </style>
 </head>
 <body>
@@ -312,33 +326,9 @@ function sendEmail() {
 
 <p class="footer">Coupang is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</p>
 
-<div class="watermark"><canvas id="watermarkCanvas"></canvas></div>
+<div class="watermark" aria-hidden="true" style="display:none;"></div>
 <script>
-(function() {
- var canvas = document.getElementById('watermarkCanvas');
- var ctx = canvas.getContext('2d');
- function draw() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '16px -apple-system, "PingFang SC", Arial, sans-serif';
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
-    ctx.textAlign = 'center';
- var text = '内推邮箱：uger501@foxmail.com';
- var gapX = 320, gapY = 200;
- for (var y = -100; y < canvas.height + 200; y += gapY) {
- for (var x = -100; x < canvas.width + 200; x += gapX) {
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate(-25 * Math.PI / 180);
-        ctx.fillText(text, 0, 0);
-        ctx.restore();
-      }
-    }
-  }
-  draw();
-  window.addEventListener('resize', draw);
-})();
+// 水印改为 CSS 背景实现，无需 canvas。保留空脚本占位以兼容老版本缓存。
 </script>
 
 </body>
