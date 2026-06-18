@@ -1,287 +1,345 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coupang 2026 社招 | 技术 & 业务多岗位热招</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f6f8fa;
-            color: #24292f;
-            line-height: 1.7;
-            padding: 2rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            position: relative;
-            z-index: 10;
-            overflow: hidden;
-        }
-
-        /* 内容区域水印 */
-        .container::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 20;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='220' viewBox='0 0 460 220'%3E%3Ctext x='230' y='110' text-anchor='middle' dominant-baseline='middle' transform='rotate(-18 230 110)' fill='rgba(80,80,80,0.18)' font-size='18' font-weight='600' font-family='Arial, sans-serif'%3E%E6%8E%A8%E8%8D%90%E9%82%AE%E7%AE%B1%EF%BC%9Auger501%40foxmail.com%3C/text%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 460px 220px;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #d82935;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .intro {
-            font-size: 16px;
-            margin-bottom: 2rem;
-            color: #373a3e;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #24292f;
-            margin-bottom: 0.8rem;
-            padding-left: 10px;
-            border-left: 4px solid #d82935;
-        }
-
-        .job-list {
-            padding-left: 1.2rem;
-        }
-
-        .job-list li {
-            margin-bottom: 0.4rem;
-            list-style: disc;
-        }
-
-        .city {
-            color: #57606a;
-            font-size: 14px;
-            margin-top: 0.3rem;
-        }
-
-        .highlight {
-            color: #d82935;
-            font-weight: 600;
-        }
-
-        .benefits {
-            background: #fef5f5;
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-        }
-
-        .benefits p {
-            margin-bottom: 0.4rem;
-        }
-
-        .footer {
-            margin-top: 2rem;
-            font-size: 14px;
-            color: #656d76;
-            text-align: center;
-        }
-
-        .contact {
-            margin-top: 1.5rem;
-            font-weight: 500;
-            color: #24292f;
-        }
-
-        .official-tip {
-            margin-top: 1rem;
-            font-size: 14px;
-            color: #57606a;
-            text-align: center;
-        }
-
-        /* 复制按钮样式 */
-        .copy-btn {
-            background-color: #d82935;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
-        .copy-btn:hover {
-            background-color: #b8212c;
-        }
-        .email-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 5px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coupang 2026 社招</title>
+<style>
+ body { font-family: -apple-system, "Helvetica Neue", "PingFang SC", Arial, sans-serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
+ h1 { text-align: center; font-size: 24px; margin-bottom: 4px; }
+ .subtitle { text-align: center; color: #666; font-size: 15px; margin-bottom: 36px; }
+ h2 { font-size: 19px; border-bottom: 2px solid #e74c3c; padding-bottom: 6px; margin-top: 36px; color: #222; }
+ h3 { font-size: 15px; color: #555; margin-top: 20px; margin-bottom: 8px; }
+ table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 14px; }
+ th { background: #f5f5f5; text-align: left; padding: 8px 10px; border-bottom: 2px solid #ddd; font-weight: 600; }
+ td { padding: 7px 10px; border-bottom: 1px solid #eee; }
+ tr:hover td { background: #fafafa; }
+ .exp { color: #888; font-size: 13px; white-space: nowrap; }
+ .hot { background: #e74c3c; color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+ .new { background: #27ae60; color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+ .tag-algo { display: inline-block; background: #8e44ad; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-be { display: inline-block; background: #2980b9; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-fe { display: inline-block; background: #e67e22; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-data { display: inline-block; background: #16a085; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-qa { display: inline-block; background: #7f8c8d; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-infra { display: inline-block; background: #34495e; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-biz { display: inline-block; background: #d35400; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .tag-pm { display: inline-block; background: #c0392b; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+ .benefits { background: #fff8f0; border: 1px solid #f5d6b0; border-radius: 8px; padding: 16px 20px; margin: 28px 0; }
+ .benefits h3 { margin-top: 0; color: #333; }
+ .benefits li { margin-bottom: 4px; }
+ .contact-box { background: #f7f7f7; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px 24px; margin: 32px 0; text-align: center; }
+ .email-link { color: #e74c3c; font-size: 18px; font-weight: bold; text-decoration: none; }
+ .email-link:hover { text-decoration: underline; }
+ .email-form select, .email-form textarea, .email-form input { width: 100%; max-width: 500px; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; margin: 6px 0; box-sizing: border-box; font-family: inherit; }
+ .email-form select { background: #fff; }
+ .email-form textarea { height: 80px; resize: vertical; }
+ .email-form .submit-btn { background: #e74c3c; color: #fff; border: none; padding: 12px 32px; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 8px; width: auto; }
+ .email-form .submit-btn:hover { background: #c0392b; }
+ .cities { text-align: center; font-size: 15px; color: #666; margin: 20px 0; }
+ .footer { text-align: center; color: #999; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+ .summary { background: #f0f4ff; border: 1px solid #c8d6f0; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+ .summary li { margin-bottom: 2px; font-size: 14px; }
+ .watermark { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
+ .watermark canvas { width: 100%; height: 100%; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Coupang 2026 社招 | 技术 & 业务多岗位热招</h1>
-        <p class="intro">Coupang 是韩国最大的电商平台，也是亚洲增长最快的科技公司之一。<br>我们正在中国多个城市扩大团队规模，寻找各领域的优秀人才加入。</p>
 
-        <div class="section">
-            <div class="section-title">AI / 机器学习</div>
-            <ul class="job-list">
-                <li>大模型基座 — 预训练、模型架构设计</li>
-                <li>多模态大模型 — 视觉-语言模型在电商场景的落地</li>
-                <li>大模型推理 & 训练优化 — 推理加速、训练 pipeline 工程化</li>
-                <li>向量检索 — 大规模向量数据库与检索系统</li>
-                <li>AI 搜索 — 基于大模型的搜索理解与排序</li>
-                <li>推理框架 — 模型服务化、在线推理平台</li>
-                <li>广告算法 — 供给优化与收益预估</li>
-                <li>零售定价 AI — 智能定价与库存决策</li>
-                <li>AI 知识工程 — 知识图谱与实体理解</li>
-            </ul>
-            <p class="city">北京 / 上海</p>
-        </div>
+<h1>Coupang 2026 社招 | 技术 &amp; 业务多岗位热招</h1>
+<p class="subtitle">Coupang 是韩国最大的电商平台，也是亚洲增长最快的科技公司之一。<br>我们正在中国多个城市扩大团队规模，寻找各领域的优秀人才加入。</p>
 
-        <div class="section">
-            <div class="section-title">后端开发</div>
-            <p class="highlight">AI Agent 方向 🔥 重点招聘</p>
-            <p>Agent 方向大幅扩招，覆盖多个业务场景：</p>
-            <ul class="job-list">
-                <li>搜索推荐 Agent — 商品发现与映射</li>
-                <li>用户旅程 Agent — Customer Journey 智能化</li>
-                <li>垂直领域 Agent — 品类与兴趣场景</li>
-                <li>营销 Agent — 站内/站外营销自动化</li>
-            </ul>
-            <p class="city">北京 / 上海</p>
-        </div>
+<!-- ============ AI / ML ============ -->
+<h2>AI / 机器学习</h2>
 
-        <div class="section">
-            <div class="section-title">平台 & 基础架构</div>
-            <ul class="job-list">
-                <li>API 网关 & 基础架构 — 电商核心认证与网关平台</li>
-                <li>AI 推理平台 — 模型推理服务的后端架构</li>
-                <li>通用数据服务 — 数据基础设施</li>
-            </ul>
-            <p class="city">北京 / 上海</p>
-        </div>
+<h3>大模型 &amp; 基础模型</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>基座大模型 — 预训练</td><td>北京 / 上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>多模态大模型 — 视觉语言模型落地（2 个岗位）</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>大模型推理 &amp; 训练优化</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>模型架构设计</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>向量检索 — 大规模向量数据库与检索系统</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+</table>
 
-        <div class="section">
-            <div class="section-title">业务后端</div>
-            <ul class="job-list">
-                <li>即时零售平台 & 数据平台 — Eats 核心交易与数据链路</li>
-                <li>广告工程 — Eats 广告系统</li>
-                <li>站内营销引擎</li>
-                <li>海外市场 — 台湾电商（在线服务 / 营销 / 零售）</li>
-                <li>履约 & 物流 — 配送、生鲜订单、全球物流</li>
-            </ul>
-            <p class="city">上海 / 北京</p>
-        </div>
+<h3>搜索 &amp; 推荐</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>AI 搜索 — 基于大模型的搜索理解与排序</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — 搜索检索与国际化平台 <span class="new">NEW</span></td><td>北京</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — 搜索检索与国际化平台 <span class="new">NEW</span></td><td>北京</td><td class="exp">5 年以上</td></tr>
+</table>
 
-        <div class="section">
-            <div class="section-title">前端开发</div>
-            <ul class="job-list">
-                <li>Web 前端 — 海外电商 Web 端建设，需有 Agent / Vibe Coding 等 AI 提效经验</li>
-            </ul>
-            <p class="city">上海 / 北京</p>
-        </div>
+<h3>应用算法</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>推理框架 — 模型服务化、在线推理平台</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>商品信息增强 — Catalog Enrichment <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>广告推荐算法 — 供给优化与收益预估</td><td>上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>零售定价 AI — 智能定价与库存决策</td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>AI 知识工程 — 知识图谱与实体理解</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+</table>
 
-        <div class="section">
-            <div class="section-title">数据方向</div>
-            <ul class="job-list">
-                <li>数据分析 — 业务数据洞察与决策支持</li>
-                <li>数仓开发（需 AI 背景）— 数据仓库架构与建模</li>
-                <li>数据科学 — 供应链优化与建模</li>
-            </ul>
-            <p class="city">上海 / 北京</p>
-        </div>
+<!-- ============ Backend ============ -->
+<h2>后端开发</h2>
 
-        <div class="section">
-            <div class="section-title">QA / 测试</div>
-            <ul class="job-list">
-                <li>AI Agent 测试 — 面向 AI Agent 系统的质量保障</li>
-                <li>原生 App 测试 & 混沌工程 — 移动端质量与稳定性体系</li>
-                <li>广告 & 视频 QA</li>
-            </ul>
-            <p class="city">上海</p>
-        </div>
+<h3>AI Agent 方向 <span class="hot">重点招聘</span></h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>搜索推荐 Agent — 商品发现与映射</td><td>北京</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>兴趣场景 Agent — Special Interests</td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>品类领域 Agent — Domain and Category</td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>用户旅程 Agent — Customer Journey</td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 站内营销自动化</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 营销数据平台</td><td>上海</td><td class="exp">5 年以上</td></tr>
+</table>
 
-        <div class="section">
-            <div class="section-title">业务方向</div>
-            <p class="highlight">跨境电商</p>
-            <ul class="job-list">
-                <li>卖家招商 — 拓展中国卖家入驻韩国市场（软百 / 硬百）</li>
-                <li>大客户管理 — Key Account 运营与增长</li>
-                <li>产品 & 项目管理 — 跨境业务流程与产品规划</li>
-            </ul>
-            <p class="city">上海 / 深圳 / 杭州 / 厦门</p>
+<h3>平台 &amp; 基础架构</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>API 网关 &amp; 认证 — 电商核心网关平台</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>购物车 &amp; 商详页 — SDP and Cart <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>通用数据服务 — 数据基础设施</td><td>北京</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>Service Mesh — 服务治理框架 <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+</table>
 
-            <p class="highlight" style="margin-top:1rem;">广告销售</p>
-            <ul class="job-list">
-                <li>广告客户管理 & 销售 — 品牌广告商拓展与运营</li>
-            </ul>
-            <p>部分岗位需英语或韩语能力</p>
-            <p class="city">上海 / 深圳</p>
+<h3>即时零售 (Eats)</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>数据平台</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>数据平台</td><td>上海</td><td class="exp">3-5 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>广告工程</td><td>北京 / 上海</td><td class="exp">3-5 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>广告工程</td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>平台工程</td><td>北京 / 上海</td><td class="exp">3-5 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>Discovery &amp; 购买</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>配送履约</td><td>上海</td><td class="exp">5 年以上</td></tr>
+</table>
 
-            <p class="highlight" style="margin-top:1rem;">战略 & 品类</p>
-            <ul class="job-list">
-                <li>全球电商战略运营</li>
-                <li>品类品牌管理</li>
-            </ul>
-            <p class="city">上海 / 北京</p>
-        </div>
+<h3>其他后端</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>站内营销引擎</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 在线服务</td><td>上海 / 北京</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 营销</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 零售</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>生鲜订单系统</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>全球物流</td><td>上海</td><td class="exp">8-10 年</td></tr>
+</table>
 
-        <div class="benefits">
-            <p>✅ 有竞争力的薪资与 RSU</p>
-            <p>✅ 与全球顶尖工程师协作的机会</p>
-            <p>✅ 大规模真实业务场景（日均数百万订单量级）</p>
-            <p>✅ 扁平化组织，技术驱动文化</p>
-        </div>
+<!-- ============ Frontend ============ -->
+<h2>前端开发</h2>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-fe">前端</span></td><td>Web 前端 — 海外电商（需有 Agent / Vibe Coding 等 AI 提效经验）</td><td>上海 / 北京</td><td class="exp">5-10 年</td></tr>
+</table>
 
-        <p class="city"><strong>工作城市：</strong>上海 | 北京 | 深圳 | 杭州 | 厦门</p>
+<!-- ============ Data ============ -->
+<h2>数据方向</h2>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据分析 — 业务数据洞察与决策支持</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数仓开发（需 AI 背景）— 数据仓库架构与建模</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据科学 — 供应链优化与建模</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据工程 — 零售定价数据平台 <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">5-10 年</td></tr>
+</table>
 
-        <p class="contact">欢迎投递简历或咨询详情：</p>
-        <div class="email-box">
-            <span style="color:#d82935; font-weight:600;" id="email">uger501@foxmail.com</span>
-            <button class="copy-btn" onclick="copyEmail()">点击复制邮箱</button>
-        </div>
-        <p class="contact" style="margin-top:0.5rem;">请附上感兴趣的方向</p>
+<!-- ============ QA ============ -->
+<h2>QA / 测试</h2>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>AI Agent 测试 — AI Agent 系统质量保障</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>原生 App 测试 &amp; 混沌工程 — 移动端稳定性</td><td>上海</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>广告 &amp; 视频 QA</td><td>上海</td><td class="exp">5 年以上</td></tr>
+</table>
 
-        <p class="official-tip">以下岗位来自官方微信公众号：Coupang纳材</p>
+<!-- ============ Business ============ -->
+<h2>业务方向</h2>
 
-        <div class="footer">
-            Coupang is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
-        </div>
-    </div>
+<h3>跨境电商</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>卖家招商 — 拓展中国卖家入驻韩国市场</td><td>厦门</td><td class="exp">3-5 年</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>大客户管理 — Key Account 运营与增长（硬百）</td><td>深圳</td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-pm">产品</span></td><td>产品 &amp; 项目管理 — 跨境业务流程与产品规划</td><td>上海</td><td class="exp">10 年以上</td></tr>
+</table>
 
-    <script>
-        function copyEmail() {
-            const email = document.getElementById('email').innerText;
-            navigator.clipboard.writeText(email).then(() => {
-                alert('邮箱已复制：' + email);
-            });
-        }
-    </script>
+<h3>广告销售</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告大客户管理</td><td>上海 / 深圳</td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告销售（需英语或韩语能力）</td><td>上海 / 深圳</td><td class="exp">3-5 年</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告销售</td><td>深圳</td><td class="exp">不限</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告销售</td><td>上海</td><td class="exp">不限</td></tr>
+</table>
+
+<h3>战略 &amp; 品类</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>全球电商战略运营</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>品类品牌管理</td><td>北京</td><td class="exp">5 年以上</td></tr>
+</table>
+
+<h3>其他</h3>
+<table>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>HR 系统专家 (Workday)</td><td>上海</td><td class="exp">3-5 年</td></tr>
+</table>
+
+<!-- ============ Benefits ============ -->
+<div class="benefits">
+ <h3>我们提供</h3>
+ <ul>
+ <li>有竞争力的薪资与 RSU</li>
+ <li>与全球顶尖工程师协作的机会</li>
+ <li>大规模真实业务场景（日均数百万订单量级）</li>
+ <li>扁平化组织，技术驱动文化</li>
+ </ul>
+</div>
+
+<p class="cities"><strong>工作城市：</strong>上海 | 北京 | 深圳 | 杭州 | 厦门</p>
+
+<!-- ============ Contact ============ -->
+<div class="contact-box">
+ <h3 style="margin-top:0;">投递简历</h3>
+ <p>请将简历发送至以下邮箱，邮件标题注明<strong>「感兴趣的方向 + 姓名」</strong></p>
+ <div style="margin:12px 0;">
+ <a class="email-link" href="mailto:uger501@foxmail.com">uger501@foxmail.com</a>
+ <button onclick="copyEmail()" style="margin-left:10px;padding:4px 14px;border:1px solid #ccc;border-radius:4px;background:#fff;cursor:pointer;font-size:13px;vertical-align:middle;" id="copy-btn">复制邮箱</button>
+ </div>
+ <p id="copy-toast" style="color:#27ae60;font-size:13px;display:none;margin:4px 0;">已复制到剪贴板</p>
+
+ <div class="email-form">
+ <p style="color:#888; font-size:13px; margin-top:16px;">选择方向后点击发送，会自动打开邮件客户端：</p>
+ <select id="position-select">
+ <option value="">— 选择感兴趣的方向 —</option>
+ <optgroup label="AI / 机器学习">
+ <option value="基座大模型">基座大模型</option>
+ <option value="多模态大模型">多模态大模型</option>
+ <option value="大模型推理与训练优化">大模型推理与训练优化</option>
+ <option value="模型架构设计">模型架构设计</option>
+ <option value="向量检索">向量检索</option>
+ <option value="AI搜索">AI 搜索</option>
+ <option value="搜索召回">搜索召回</option>
+ <option value="推理框架">推理框架</option>
+ <option value="商品信息增强">商品信息增强</option>
+ <option value="广告推荐算法">广告推荐算法</option>
+ <option value="零售定价AI">零售定价 AI</option>
+ <option value="AI知识工程">AI 知识工程</option>
+ </optgroup>
+ <optgroup label="后端开发">
+ <option value="AI Agent后端">AI Agent 后端</option>
+ <option value="API网关与认证">API 网关与认证</option>
+ <option value="购物车与商详页">购物车与商详页</option>
+ <option value="通用数据服务">通用数据服务</option>
+ <option value="Service Mesh">Service Mesh</option>
+ <option value="即时零售平台">即时零售 (Eats) 平台</option>
+ <option value="广告工程">广告工程</option>
+ <option value="营销引擎">营销引擎</option>
+ <option value="台湾电商后端">台湾电商后端</option>
+ <option value="配送履约">配送履约</option>
+ <option value="全球物流">全球物流</option>
+ <option value="生鲜订单系统">生鲜订单系统</option>
+ </optgroup>
+ <optgroup label="其他技术">
+ <option value="Web前端">Web 前端</option>
+ <option value="数据分析">数据分析</option>
+ <option value="数仓开发">数仓开发</option>
+ <option value="数据科学">数据科学</option>
+ <option value="数据工程">数据工程</option>
+ <option value="QA测试">QA / 测试</option>
+ </optgroup>
+ <optgroup label="业务方向">
+ <option value="跨境卖家招商">跨境卖家招商</option>
+ <option value="大客户管理">大客户管理</option>
+ <option value="产品与项目管理">产品与项目管理</option>
+ <option value="广告销售">广告销售</option>
+ <option value="战略运营">战略运营</option>
+ <option value="品类品牌管理">品类品牌管理</option>
+ <option value="HRIS Workday">HRIS Workday</option>
+ </optgroup>
+ </select>
+ <input type="text" id="name-input" placeholder="你的姓名" />
+ <textarea id="msg-input" placeholder="简单介绍自己（可选）"></textarea>
+ <br>
+ <button class="submit-btn" onclick="sendEmail()">发送邮件</button>
+ </div>
+
+ <div style="margin-top:20px;padding-top:16px;border-top:1px dashed #ddd;">
+ <p style="color:#888;font-size:13px;margin:0;">
+ <strong>移动端提示：</strong>如在微信/App 内无法直接发送邮件，请长按复制邮箱地址，<br>
+      打开手机自带邮件 App 或 QQ邮箱/网易邮箱 App，新建邮件粘贴收件人即可。
+ </p>
+ </div>
+</div>
+
+<script>
+function copyEmail() {
+ var email = 'uger501@foxmail.com';
+ if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(function() { showToast(); });
+  } else {
+ var t = document.createElement('textarea');
+    t.value = email;
+    t.style.position = 'fixed';
+    t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    showToast();
+  }
+}
+function showToast() {
+ var el = document.getElementById('copy-toast');
+  el.style.display = 'block';
+  setTimeout(function() { el.style.display = 'none'; }, 2000);
+}
+function sendEmail() {
+ var pos = document.getElementById('position-select').value || '未选择';
+ var name = document.getElementById('name-input').value || '候选人';
+ var msg = document.getElementById('msg-input').value || '';
+ var subject = encodeURIComponent('内推投递 - ' + pos + ' - ' + name);
+ var body = encodeURIComponent(
+ '你好，\n\n' +
+ '我对 Coupang 的「' + pos + '」方向很感兴趣。\n\n' +
+    (msg ? '自我介绍：\n' + msg + '\n\n' : '') +
+ '简历见附件，期待交流！\n\n' +
+    name
+  );
+  window.location.href = 'mailto:uger501@foxmail.com?subject=' + subject + '&body=' + body;
+}
+</script>
+
+<p class="footer">Coupang is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</p>
+
+<div class="watermark"><canvas id="watermarkCanvas"></canvas></div>
+<script>
+(function() {
+ var canvas = document.getElementById('watermarkCanvas');
+ var ctx = canvas.getContext('2d');
+ function draw() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '16px -apple-system, "PingFang SC", Arial, sans-serif';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    ctx.textAlign = 'center';
+ var text = '内推邮箱：uger501@foxmail.com';
+ var gapX = 320, gapY = 200;
+ for (var y = -100; y < canvas.height + 200; y += gapY) {
+ for (var x = -100; x < canvas.width + 200; x += gapX) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(-25 * Math.PI / 180);
+        ctx.fillText(text, 0, 0);
+        ctx.restore();
+      }
+    }
+  }
+  draw();
+  window.addEventListener('resize', draw);
+})();
+</script>
+
 </body>
 </html>
