@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Coupang 岗位详细 JD</title>
+<style>
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 16px 40px;
+  color: #333;
+  line-height: 1.7;
+  background: #f8f9fa;
+}
+.page-header {
+  text-align: center;
+  padding: 12px 0 20px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  margin: -16px -16px 20px;
+  border-radius: 0 0 16px 16px;
+}
+.page-header h1 { font-size: 20px; margin: 8px 0 4px; font-weight: 600; }
+.page-header p { font-size: 13px; opacity: 0.9; margin: 0; }
+
+/* 快速导航 */
+.nav-box {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.nav-box h4 { margin: 0 0 10px; font-size: 14px; color: #555; font-weight: 500; }
+.nav-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f0f4ff;
+  color: #2980b9;
+  border-radius: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-tag:active { background: #d9e4ff; }
+
+/* 岗位卡片 */
+.job-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.job-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.job-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+.job-location {
+  background: #e74c3c;
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.job-meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.job-meta span { margin-right: 12px; }
+
+.job-section h5 {
+  font-size: 14px;
+  color: #e74c3c;
+  margin: 14px 0 8px;
+  font-weight: 600;
+}
+.job-section p {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: #555;
+}
+.job-section ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+.job-section li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444;
+}
+.job-section li strong { color: #222; }
+
+/* 标签样式 */
+.tag-be { background: #2980b9; color: white; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; display: inline-block; }
+.tag-algo { background: #8e44ad; color: white; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; display: inline-block; }
+.tag-ai { background: #f39c12; color: white; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; display: inline-block; }
+
+/* 复制按钮 */
+.copy-btn {
+  display: block;
+  width: 100%;
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 14px;
+  cursor: pointer;
+}
+.copy-btn:active { background: #229954; }
+
+/* 返回顶部 */
+.back-top {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 18px;
+  z-index: 100;
+}
+
+/* 底部 */
+.footer {
+  text-align: center;
+  padding-top: 20px;
+  color: #999;
+  font-size: 12px;
+}
+.contact-bar {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+.contact-bar .email {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+.contact-bar .tip {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* 水印 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='180' viewBox='0 0 300 180'><text x='150' y='90' fill='rgba(0,0,0,0.06)' font-size='14' font-weight='600' font-family='Arial,sans-serif' text-anchor='middle' dominant-baseline='middle' transform='rotate(-22 150 90)'>uger501@foxmail.com</text></svg>");
+  background-repeat: repeat;
+  background-size: 300px 180px;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9999;
+  display: none;
+}
+</style>
+</head>
+<body id="top">
+
+<div class="page-header">
+  <h1>Coupang 岗位详细 JD</h1>
+  <p>点击岗位标签快速跳转 · 长按可复制分享</p>
+</div>
+
+<div class="nav-box">
+  <h4>📋 快速导航</h4>
+  <div class="nav-tags">
+    <a href="#job1" class="nav-tag">资深Java专家</a>
+    <a href="#job2" class="nav-tag">Java架构师-广告</a>
+    <a href="#job3" class="nav-tag">Java架构师-台湾</a>
+    <a href="#job4" class="nav-tag">广告开发工程师</a>
+    <a href="#job5" class="nav-tag">营销架构师</a>
+    <a href="#job6" class="nav-tag">Agentic AI</a>
+  </div>
+</div>
+
+<!-- 岗位1 -->
+<div class="job-card" id="job1">
+  <div class="job-title-row">
+    <h3 class="job-title">资深Java专家 (TW Online Service)</h3>
+    <span class="job-location">北京/上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-be">后端</span>
+    <span>📍 北京/上海</span>
+    <span>⏱ 10年+</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌团队介绍</h5>
+    <p>台湾在线服务团队是专注于Coupang核心业务的专门工程组织。该团队与当地商业利益相关方及产品团队紧密合作，以惊喜客户并扩展业务。我们开发和维护10多个领域，从预购、购物流程到售后领域，为客户提供端到端的服务。我们利用人工智能和分布式系统，构建关键任务和高度可扩展的服务，以支持业务成为海外领先的电商平台。</p>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ul>
+      <li>架构、设计并构建可扩展的系统，这些系统将直接影响客户获取、体验、转化和留存</li>
+      <li>与中国的产品和技术团队建立并保持紧密关系</li>
+      <li>为业务制定并执行短期和长期的架构路线图</li>
+      <li>在保持高标准的客户信任、性能和可用性的前提下，推动平台和服务效率与灵活性的持续改进</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌基本要求</h5>
+    <ul>
+      <li>计算机科学或工程学学士/硕士，或相关领域</li>
+      <li>10年以上行业经验，承担越来越多的责任，领导工程师团队</li>
+      <li>5年以上在大型分布式系统、网络服务和Java方面的工作经验</li>
+      <li>有设计和实现高并发、高可用性和高可扩展性系统的经验</li>
+      <li>熟悉分布式系统架构、微服务架构和设计，以及消息队列、缓存、数据库等核心后端知识</li>
+      <li>具备成长型思维，有公司全局视角，专注于解决业务问题，数据驱动</li>
+      <li>在快速变化的需求环境中，能够有效交付成果，并做出适当的权衡取舍</li>
+      <li>有与全球分布式团队紧密合作的经验</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌优先资格</h5>
+    <ul>
+      <li>在商业行业有先前经验</li>
+      <li>积极主动，有强烈的主动性和主动性方法</li>
+      <li>优秀的沟通者，擅长管理复杂的协作关系</li>
+      <li>富有创新思维和动态心态的创造性问题解决者</li>
+      <li>流利的英语沟通</li>
+    </ul>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job1')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 岗位2 -->
+<div class="job-card" id="job2">
+  <div class="job-title-row">
+    <h3 class="job-title">Java架构师（广告）</h3>
+    <span class="job-location">上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-be">后端</span>
+    <span>📍 上海</span>
+    <span>⏱ 5-10年</span>
+    <span>🎓 硕士</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌团队介绍</h5>
+    <p>Coupang是全球规模最大，发展最快的电商平台之一。Eats Engineering目前是Coupang的核心业务之一，过去两年多以来，持续高速扩张主营商业模式以及探索不同赛道。目前的业务除了典型的外卖配送服务以外，也同时为客户提供到店取以及本地零售等服务。我们的技术团队由上海，首尔和北京的顶尖人才组成，通过高质量的技术创新为我们的客户提供智能的用户体验。</p>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ul>
+      <li>通过深入研究识别系统中的问题和差距，提出解决方案以彻底解决问题</li>
+      <li>与高级工程团队合作，为解决多工程团队中的大规模技术问题做出贡献，并制定最佳工程实践</li>
+      <li>为招聘最好的工程师做出贡献，并在整个工程团队中开发/指导工程师，以提高工程标准</li>
+      <li>与团队成员、同事和领导团队进行清晰简洁的沟通</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌基本要求</h5>
+    <ul>
+      <li>计算机科学、工程或相关专业的学士/硕士/博士学位</li>
+      <li>5年以上大型分布式系统和Web服务的软件开发及架构设计经验，精通Java</li>
+      <li>熟悉容器及云原生开发（Kubernetes、Docker等）；熟悉监控工具（Prometheus、Grafana等）</li>
+      <li>有设计和实现高并发、高可用、高可扩展系统的经验</li>
+      <li>深刻理解分布式系统、微服务架构与设计、消息队列、缓存、数据库及其他核心后端技术</li>
+      <li>拥有成长型思维和全公司视角；关注业务问题解决和数据驱动决策</li>
+    </ul>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job2')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 岗位3 -->
+<div class="job-card" id="job3">
+  <div class="job-title-row">
+    <h3 class="job-title">Java架构师（台湾业务）</h3>
+    <span class="job-location">上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-be">后端</span>
+    <span>📍 上海</span>
+    <span>⏱ 7年+</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌团队介绍</h5>
+    <p>台湾工程四队是 Coupang 在台湾核心业务的专属工程组织。该团队对系统拥有端到端的责任，我们与本地业务相关方和产品团队紧密合作，以惊艳我们的客户并扩大业务规模。</p>
+    <p>台湾目录团队是我们电子商务生态系统的支柱，充当连接商家、产品和客户的中枢神经系统。作为产品信息中心，我们管理产品数据的完整生命周期——从类别分类和属性定义到 SKU 管理和产品丰富化。我们的系统负责确保每个产品列表包含准确、完整且结构良好的信息，以支持整个客户旅程。</p>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ul>
+      <li>架构、设计和构建可扩展的系统，这些系统将直接影响客户获取、体验、转化和留存</li>
+      <li>与中国和韩国的产品及技术团队建立密切合作关系</li>
+      <li>为业务制定和执行短期及长期的架构路线图</li>
+      <li>在保持高客户信任度、性能和可用性的同时，推动平台和服务效率及灵活性的持续改进</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌基本要求</h5>
+    <ul>
+      <li>计算机科学、工程或相关专业的学士/硕士/博士学位</li>
+      <li>7年以上大型分布式系统和Web服务的软件开发及架构设计经验，精通Java</li>
+      <li>熟悉容器及云原生开发 (Kubernetes、Docker等)；熟悉监控工具 (Prometheus、Grafana等)</li>
+      <li>有设计和实现高并发、高可用、高可扩展系统的经验</li>
+      <li>深刻理解分布式系统、微服务架构与设计、消息队列、缓存、数据库及其他核心后端技术</li>
+      <li>拥有成长型思维和全公司视角；关注业务问题解决和数据驱动决策</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌优先考虑的核心能力</h5>
+    <ul>
+      <li>深入了解如何将主动编码工具（如 Claude Code）融入开发工作流程、技能和子代理</li>
+      <li>具备与增长营销相关的业务领域或平台开发的经验</li>
+      <li>具有电子商务行业的经验</li>
+    </ul>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job3')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 岗位4 -->
+<div class="job-card" id="job4">
+  <div class="job-title-row">
+    <h3 class="job-title">资深软件开发工程师（广告）</h3>
+    <span class="job-location">上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-be">后端</span>
+    <span>📍 上海</span>
+    <span>🎓 硕士/博士</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ol>
+      <li>负责视频广告投放管道的设计与开发</li>
+      <li>利用AIGC技术开发视频自动生成功能</li>
+      <li>分析视频广告的用户转化漏斗数据模型，找出影响整体表现的瓶颈</li>
+      <li>提出提高视频广告转化率的建议，并通过开发相关功能和A/B测试进行验证和发布</li>
+      <li>负责团队内的实验管理工作，包括：目标设定、流程监控、离线数据分析等</li>
+    </ol>
+  </div>
+
+  <div class="job-section">
+    <h5>▌要求与技能</h5>
+    <ol>
+      <li>统计机器学习/计算机/自动化/数学相关领域的硕士或博士学位</li>
+      <li>强大的后端服务开发经验，擅长系统化思考和设计</li>
+      <li>具备数据分析、构建数据管道、预测和优化经验</li>
+      <li>精通SQL、airflow或类似作业调度工具，至少掌握一种统计程序语言</li>
+      <li>具备A/B测试全过程的经验，包括：实验设计、监控、分析、决策</li>
+      <li>精通Java/Python/C++后端编程技能，对数据结构/算法有良好了解</li>
+      <li>具备基于机器学习的推荐算法经验者优先</li>
+      <li>具备视频AIGC相关产品设计与发展经验者优先</li>
+      <li>具备项目管理经验，强大的项目推动能力，良好的团队沟通技巧</li>
+    </ol>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job4')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 岗位5 -->
+<div class="job-card" id="job5">
+  <div class="job-title-row">
+    <h3 class="job-title">Java营销领域架构师</h3>
+    <span class="job-location">上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-be">后端</span>
+    <span>📍 上海</span>
+    <span>⏱ 5年+架构</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌团队介绍</h5>
+    <p>在增长工程团队，我们的目标是增加交易客户数量，同时提升用户的购买频率和价值。我们构建核心平台和服务， 为 Coupang 的增长和营销效率提供强大支持。我们旗下平台包括搜索广告平台、联盟营销平台、展示广告平台和营销重塑平台、客户关系管理（CRM）、用户平台、推送营销平台以及其他核心营销服务，涵盖用户画像、落地页、 追踪和归因等。</p>
+    <p>作为 Coupang增长工程团队的高级技术专家/架构师，您将在构建和开发下一代CRM 平台方面发挥关键作用。您将领导各项计划，确保该平台提供端到端的营销活动管理，规划和演进公司核心营销技术与数字化运营系统的整体架构。</p>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ul>
+      <li><strong>架构规划与设计：</strong>负责营销全链路（包括但不限于CDP用户数据平台、营销自动化、CMS内容管理、标签画像系统、规则引擎、奖品中心等）的系统架构设计，确保系统的高并发、高可用与强扩展性</li>
+      <li><strong>技术选型与演进：</strong>紧跟国内外营销技术的发展趋势，负责营销工具及开源技术的选型与评估（如智能化投放、AI 大模型在营销文案/素材的落地应用），推动架构平滑演进</li>
+      <li><strong>数据链路打通：</strong>协同大数据团队，优化全渠道（App、Web、三方媒体）的数据埋点、采集、清洗与沉淀流向，构建统一的用户体系，支撑实时营销场景</li>
+      <li><strong>业务赋能与咨询：</strong>深刻理解增长、运营、投放等业务团队的痛点，将复杂的业务需求抽象为通用的平台能力，提供技术可行性评估与创新方案</li>
+      <li><strong>规范与指导：</strong>制定营销领域的编码规范、接口标准及架构原则；指导并提升核心开发人员的技术能力，把控核心代码质量与系统重构</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌任职要求</h5>
+    <ul>
+      <li>计算机、软件工程、信息系统或相关专业本科及以上学历</li>
+      <li>5年以上大型互联网或数字化转型企业架构设计经验，3年以上深耕在营销技术、流量增长、电商营销或CRM等领域</li>
+      <li>精通Java/Go等至少一种主流开发语言，熟练掌握微服务架构（Spring Cloud/Dubbo等）</li>
+      <li>具备高并发、大流量、分布式系统的设计与调优经验</li>
+      <li>熟悉常见的营销玩法（如裂变、发券、秒杀、拼团、积分商城）及触达通道（Push、短信、微信生态、邮件）</li>
+      <li>对主流营销产品（如Salesforce Marketing Cloud、火山引擎、神策、GrowingIO等）的设计理念有深入研究者优先</li>
+      <li>优秀的跨部门沟通与推动能力，能抗压，具备技术攻坚的韧性</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌优先考虑</h5>
+    <ul>
+      <li>精通MySQL、Redis、MongoDB等数据库，熟练运用RocketMQ/Kafka等消息中间件</li>
+      <li>具备复杂规则引擎（如Drools）设计经验者优先</li>
+      <li>熟悉大数据生态（Hadoop/Hive/Spark/Flink），对用户画像、标签体系、精准推荐算法有实际落地经验</li>
+      <li>熟悉海外营销生态（如Google/Meta投放、Shopify生态、GDPR合规）</li>
+    </ul>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job5')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 岗位6 -->
+<div class="job-card" id="job6">
+  <div class="job-title-row">
+    <h3 class="job-title">Agentic AI Engineer</h3>
+    <span class="job-location">北京/上海</span>
+  </div>
+  <div class="job-meta">
+    <span class="tag-ai">AI</span>
+    <span>📍 北京/上海</span>
+    <span>⏱ 2年+</span>
+  </div>
+
+  <div class="job-section">
+    <h5>▌岗位介绍</h5>
+    <p>我们正在招聘一位偏应用落地的 Agentic AI Engineer，负责将大模型与 Agent 技术真正应用到业务场景中。你将设计和开发能够自主理解需求、调用工具、执行多步任务的AI Agent，推动 Agentic AI 在 Testing 等实际场景中的落地与规模化使用。</p>
+  </div>
+
+  <div class="job-section">
+    <h5>▌核心职责</h5>
+    <ul>
+      <li>设计并实现可落地的 AI Agent，用于自动化测试、流程执行与业务协作</li>
+      <li>基于 LLM 构建具备 Memory、Tool Calling 和多步任务规划能力的 Agent 系统</li>
+      <li>集成 LangChain / LangGraph / OpenAI API 等框架，快速交付可用产品能力</li>
+      <li>构建稳定的 Agent 工作流 (Prompt, Tool, RAG, Evaluation, Monitoring)</li>
+      <li>优化 Agent 的可靠性、成本、响应速度与安全策略</li>
+      <li>与测试、产品、平台团队协作，推动 Agent 在真实业务场景中的使用与推广</li>
+      <li>持续跟进 Agent 技术趋势，并将新能力转化为可落地方案</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌技术能力要求</h5>
+    <ul>
+      <li>熟练使用 Python 进行工程开发</li>
+      <li>掌握 LLM 相关技术：Prompt、RAG、Function Calling、Fine-tuning 等</li>
+      <li>熟练使用 LangChain、LangGraph、OpenAI API、Hugging Face 等至少一种框架</li>
+      <li>有 Agent / Workflow / 自动化系统开发经验（如 AutoGPT、CrewAI、ReAct 等）</li>
+      <li>理解 API 集成、系统设计、日志监控与评估体系</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌经验要求</h5>
+    <ul>
+      <li>2年以上 AI / 后端 / 自动化工程经验</li>
+      <li>至少 1年 LLM 或 Agent 应用落地经验</li>
+      <li>有测试自动化、DevOps、Workflow Automation 经验者优先</li>
+    </ul>
+  </div>
+
+  <div class="job-section">
+    <h5>▌加分项</h5>
+    <ul>
+      <li>有企业级 AI Agent 落地或内部效率工具开发经验</li>
+      <li>熟悉强化学习、知识图谱或多 Agent 协作架构</li>
+      <li>有AI产品从 PoC 到生产环境的完整交付经验</li>
+    </ul>
+  </div>
+
+  <button class="copy-btn" onclick="copyJob('job6')">📋 复制本岗位 JD</button>
+</div>
+
+<!-- 联系方式 -->
+<div class="contact-bar">
+  <div style="font-size:13px;opacity:0.95;">📧 简历投递邮箱</div>
+  <div class="email" onclick="copyEmail()" style="cursor:pointer;">uger501@foxmail.com</div>
+  <div class="tip">（点击复制邮箱，发送时请注明岗位+姓名）</div>
+</div>
+
+<div class="footer">
+  Coupang is an equal opportunity employer
+</div>
+
+<a href="#top" class="back-top">↑</a>
+
+<div class="toast" id="toast">已复制！</div>
+
+<script>
+function copyJob(jobId) {
+  var el = document.getElementById(jobId);
+  var text = el.innerText.replace(/📋 复制本岗位 JD/g, '');
+  copyToClipboard(text);
+}
+
+function copyEmail() {
+  copyToClipboard('uger501@foxmail.com');
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showToast);
+  } else {
+    var t = document.createElement('textarea');
+    t.value = text;
+    t.style.position = 'fixed';
+    t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    showToast();
+  }
+}
+
+function showToast() {
+  var toast = document.getElementById('toast');
+  toast.style.display = 'block';
+  setTimeout(function() { toast.style.display = 'none'; }, 1800);
+}
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
