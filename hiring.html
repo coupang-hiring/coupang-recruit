@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coupang 2026 社招</title>
 <style>
- body { font-family: -apple-system, "Helvetica Neue", "PingFang SC", Arial, sans-serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
+ body { font-family: -apple-system, "Helvetica Neue", "PingFang SC", Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
  h1 { text-align: center; font-size: 24px; margin-bottom: 4px; }
  .subtitle { text-align: center; color: #666; font-size: 15px; margin-bottom: 36px; }
  h2 { font-size: 19px; border-bottom: 2px solid #e74c3c; padding-bottom: 6px; margin-top: 36px; color: #222; }
  h3 { font-size: 15px; color: #555; margin-top: 20px; margin-bottom: 8px; }
  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 14px; }
  th { background: #f5f5f5; text-align: left; padding: 8px 10px; border-bottom: 2px solid #ddd; font-weight: 600; }
- td { padding: 7px 10px; border-bottom: 1px solid #eee; }
+ td { padding: 7px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
  tr:hover td { background: #fafafa; }
  .exp { color: #888; font-size: 13px; white-space: nowrap; }
+ .level { display: inline-block; background: #eef2f7; color: #3d5a80; font-size: 12px; padding: 1px 7px; border-radius: 3px; white-space: nowrap; font-weight: 600; font-family: -apple-system, "SF Mono", Menlo, monospace; }
  .hot { background: #e74c3c; color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
  .new { background: #27ae60; color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
  .tag-algo { display: inline-block; background: #8e44ad; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
@@ -40,6 +41,9 @@
  .footer { text-align: center; color: #999; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
  .summary { background: #f0f4ff; border: 1px solid #c8d6f0; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
  .summary li { margin-bottom: 2px; font-size: 14px; }
+ .level-legend { background: #f8f9fb; border: 1px solid #e2e6ee; border-radius: 8px; padding: 12px 18px; margin: 16px 0 24px 0; font-size: 13px; color: #555; }
+ .level-legend strong { color: #333; }
+ .level-legend code { background: #eef2f7; color: #3d5a80; padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 600; font-family: -apple-system, "SF Mono", Menlo, monospace; }
  /* 全屏水印：用 SVG 背景而非 fixed canvas，避免 iPhone 截长图变形 */
  html { position: relative; }
  body { position: relative; }
@@ -63,37 +67,44 @@
 <h1>Coupang 2026 社招 | 技术 &amp; 业务多岗位热招</h1>
 <p class="subtitle">Coupang 是韩国最大的电商平台，也是亚洲增长最快的科技公司之一。<br>我们正在中国多个城市扩大团队规模，寻找各领域的优秀人才加入。</p>
 
+<div class="level-legend">
+ <strong>目标职级（对标 P 级）：</strong>
+ <code>P7</code> 5 年以上
+ &nbsp;·&nbsp; <code>P8</code> 8-10 年
+ &nbsp;·&nbsp; <code>P9+</code> 10 年以上
+</div>
+
 <!-- ============ AI / ML ============ -->
 <h2>AI / 机器学习</h2>
 
 <h3>大模型 &amp; 基础模型</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>基座大模型 — Coupang Foundational Model</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>多模态大模型 — Catalog Science</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>多模态大模型 — AI &amp; Knowledge Engineering</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>大模型推理训练 — ML Pipeline</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>模型架构设计 — Coupang AI Foundations</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>向量检索 — ML Pipeline</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>基座大模型 — Coupang Foundational Model</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>多模态大模型 — Catalog Science</td><td>北京 / 上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>多模态大模型 — AI &amp; Knowledge Engineering</td><td>北京 / 上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>大模型推理训练 — ML Pipeline for Foundational Model</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>模型架构设计 — Coupang AI Foundations</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>向量检索 — ML Pipeline for Foundational Model</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
 </table>
 
 <h3>搜索 &amp; 推荐</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>AI 搜索 — Compass Discovery</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — Search Retrieval / 国际化 <span class="new">NEW</span></td><td>北京</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — Search Retrieval / 国际化 <span class="new">NEW</span></td><td>北京</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>AI 搜索 — Compass Discovery</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — Search Retrieval, S&D I18n and Measurement Platform</td><td>北京</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>搜索召回 — Search Retrieval, S&D I18n and Measurement Platform</td><td>北京</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <h3>应用算法</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>推理框架 — Catalog Inference Framework</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>商品信息增强 — Catalog Enrichment <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>广告推荐算法 — NCA Supply &amp; Yield</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>零售定价 AI — Retail &amp; Pricing AI</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>AI 知识工程 — AI &amp; Knowledge Engineering</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-algo">算法</span></td><td>商品映射 Agent — Auto-mapping Engineering <span class="new">NEW</span></td><td>北京</td><td class="exp">10 年以上</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>推理框架 — Catalog Inference Framework</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>商品信息增强 — Catalog Enrichment</td><td>北京 / 上海</td><td><span class="level">P8 / P9+</span></td><td class="exp">8 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>广告推荐算法 — NCA Supply &amp; Yield</td><td>上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>零售定价 AI — Retail &amp; Pricing AI</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>AI 知识工程 — AI &amp; Knowledge Engineering</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-algo">算法</span></td><td>商品映射 Agent — Auto-mapping Engineering</td><td>北京</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
 </table>
 
 <!-- ============ Backend ============ -->
@@ -101,72 +112,74 @@
 
 <h3>AI Agent 方向 <span class="hot">重点招聘</span></h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-be">后端</span></td><td>兴趣场景 Agent — Special Interests</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>品类领域 Agent — Domain and Category</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>用户旅程 Agent — Customer Journey</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 站内营销自动化</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 营销数据平台</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>兴趣场景 Agent — Special Interests</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>品类领域 Agent — Domain and Category</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>用户旅程 Agent — Customer Journey</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 站内营销自动化</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>营销 Agent — 营销数据平台</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <h3>平台 &amp; 基础架构</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-infra">基础架构</span></td><td>API 网关 &amp; 认证 — eCommerce Auth</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>购物车 &amp; 商详页 — SDP and Cart <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-infra">基础架构</span></td><td>通用数据服务 — Common Data Service</td><td>北京</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-infra">基础架构</span></td><td>Service Mesh — 服务治理框架 <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>API 网关 &amp; 认证 — eCommerce Auth</td><td>上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>购物车 &amp; 商详页 — SDP and Cart</td><td>北京 / 上海</td><td><span class="level">P8 / P9+</span></td><td class="exp">8 年以上</td></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>通用数据服务 — Common Data Service</td><td>北京</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>Service Mesh — 服务治理框架</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-infra">基础架构</span></td><td>核心会员认证平台 — Core Member Auth Platform <span class="new">NEW</span></td><td>上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
 </table>
 
 <h3>外卖业务 (Eats)</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-be">后端</span></td><td>数据平台 — Eats Data Platform</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>数据平台 — Eats Data Platform</td><td>上海</td><td class="exp">5 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>广告工程 — Eats Ads Engineering</td><td>北京 / 上海</td><td class="exp">5 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>广告工程 — Eats Ads Engineering</td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>平台工程 — Eats Platform Engineering</td><td>北京 / 上海</td><td class="exp">5 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>Discovery &amp; 购买 — Discovery and Purchase</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>配送履约 — Delivery Funnel</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>数据平台 — Eats Data Platform</td><td>上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>数据平台 — Eats Data Platform</td><td>上海</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>广告工程 — Eats Ads Engineering</td><td>北京 / 上海</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>广告工程 — Eats Ads Engineering</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>平台工程 — Eats Platform Engineering</td><td>北京 / 上海</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>Discovery &amp; 购买 — Discovery and Purchase</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>配送履约 — Delivery Funnel</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <h3>其他后端</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-be">后端</span></td><td>站内营销引擎 — Onsite Marketing</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>站内营销 Agent — Onsite Marketing</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>营销数据平台 Agent — Marketing Data &amp; Platform</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 在线服务</td><td>上海 / 北京</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 营销 (Catalog)</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 零售</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>生鲜订单系统 — Fresh Ordering</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-be">后端</span></td><td>全球物流 — Global Logistics Tech</td><td>上海</td><td class="exp">10 年以上</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>站内营销引擎 — Onsite Marketing</td><td>上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>站内营销 Agent — Onsite Marketing</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>营销数据平台 Agent — Marketing Data &amp; Platform</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 在线服务</td><td>上海 / 北京</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 营销 (Catalog)</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>台湾电商 — 零售</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>生鲜订单系统 — Fresh Ordering</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-be">后端</span></td><td>全球物流 — Global Logistics Tech</td><td>上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
 </table>
 
 <!-- ============ Frontend ============ -->
 <h2>前端开发</h2>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-fe">前端</span></td><td>Web 前端 — 台湾电商（需 Agent / Vibe Coding 等 AI 提效经验）</td><td>上海 / 北京</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-fe">前端</span></td><td>Web 前端 — 台湾电商（需 Agent / Vibe Coding 等 AI 提效经验）</td><td>上海 / 北京</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
 </table>
 
 <!-- ============ Data ============ -->
 <h2>数据方向</h2>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-data">数据</span></td><td>数据分析 — Eats Analytics</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-data">数据</span></td><td>数仓开发（需 AI 背景）— Eats Analytics</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-data">数据</span></td><td>数据科学 — 供应链优化（SCMA Engineering）</td><td>北京 / 上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-data">数据</span></td><td>数据工程 — 零售定价数据平台 <span class="new">NEW</span></td><td>北京 / 上海</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据分析 — Eats Analytics</td><td>上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数仓开发（需 AI 背景）— Eats Analytics</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据科学 — 供应链优化（SCMA Engineering）</td><td>北京 / 上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据工程 — 零售定价数据平台</td><td>北京 / 上海</td><td><span class="level">P7 / P8</span></td><td class="exp">5-10 年</td></tr>
+ <tr><td><span class="tag-data">数据</span></td><td>数据科学 — S&D Data Science and Analytics (TW) <span class="new">NEW</span></td><td>北京 / 上海</td><td><span class="level">P8</span></td><td class="exp">8-10 年</td></tr>
 </table>
 
 <!-- ============ QA ============ -->
 <h2>QA / 测试</h2>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-qa">测试</span></td><td>AI Agent 测试 — Onsite Marketing Engineering</td><td>上海</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-qa">测试</span></td><td>原生 App 测试 &amp; 混沌工程 — Test Frameworks</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-qa">测试</span></td><td>广告 &amp; 视频 QA — Brand Ads and Video</td><td>上海</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>AI Agent 测试 — Onsite Marketing Engineering</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>原生 App 测试 &amp; 混沌工程 — Test Frameworks</td><td>上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-qa">测试</span></td><td>广告 &amp; 视频 QA — Brand Ads and Video</td><td>上海</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <!-- ============ Business ============ -->
@@ -174,31 +187,31 @@
 
 <h3>跨境电商</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>卖家招商 — Rocket Growth NSR</td><td>厦门</td><td class="exp">5 年以上</td></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>大客户管理 — Hardline 1 KAM</td><td>深圳</td><td class="exp">8-10 年</td></tr>
- <tr><td><span class="tag-pm">产品</span></td><td>产品 &amp; 项目管理 — Rocket Growth Inbound</td><td>上海</td><td class="exp">10 年以上</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>卖家招商 — Rocket Growth NSR</td><td>厦门 / 深圳 / 广州</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>大客户管理 — Hardline 1 KAM</td><td>深圳</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-pm">产品</span></td><td>产品 &amp; 项目管理 — Rocket Growth Inbound</td><td>上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
 </table>
 
 <h3>广告销售</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>广告大客户管理（需英语能力）— Ads CN and ROW</td><td>上海 / 深圳</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>广告销售（需英语或韩语能力）— Ads Conversion Outbound</td><td>上海 / 深圳</td><td class="exp">5 年以上</td></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>广告销售（需英语能力）— Ads Conversion Outbound</td><td>上海 / 深圳</td><td class="exp">3-5 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告大客户管理（需英语能力）— Ads CN and ROW</td><td>上海 / 深圳</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告销售（需英语或韩语能力）— Ads Conversion Outbound</td><td>上海 / 深圳</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>广告销售（需英语能力）— Ads Conversion Outbound</td><td>上海 / 深圳</td><td><span class="level">P5</span></td><td class="exp">3-5 年</td></tr>
 </table>
 
 <h3>战略 &amp; 品类</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>全球电商战略运营 — Global Ecommerce</td><td>上海</td><td class="exp">10 年以上</td></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>品类品牌管理 — Category CE</td><td>北京</td><td class="exp">8-10 年</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>全球电商战略运营 — Global Ecommerce</td><td>上海</td><td><span class="level">P9+</span></td><td class="exp">10 年以上</td></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>品类品牌管理 — Category CE</td><td>北京</td><td><span class="level">P7</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <h3>其他</h3>
 <table>
- <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>经验要求</th></tr>
- <tr><td><span class="tag-biz">业务</span></td><td>HR 系统专家 (Workday)</td><td>上海</td><td class="exp">5 年以上</td></tr>
+ <tr><th>岗位类型</th><th>岗位方向</th><th>地点</th><th>目标职级</th><th>经验要求</th></tr>
+ <tr><td><span class="tag-biz">业务</span></td><td>HR 系统专家 (Workday)</td><td>上海</td><td><span class="level">P6</span></td><td class="exp">5 年以上</td></tr>
 </table>
 
 <!-- ============ Benefits ============ -->
@@ -212,7 +225,7 @@
  </ul>
 </div>
 
-<p class="cities"><strong>工作城市：</strong>上海 | 北京 | 深圳 | 杭州 | 厦门</p>
+<p class="cities"><strong>工作城市：</strong>上海 | 北京 | 深圳 | 杭州 | 厦门 | 广州</p>
 
 <!-- ============ Contact ============ -->
 <div class="contact-box">
@@ -248,6 +261,7 @@
  <option value="购物车与商详页">购物车与商详页</option>
  <option value="通用数据服务">通用数据服务</option>
  <option value="Service Mesh">Service Mesh</option>
+	 <option value="核心会员认证平台">核心会员认证平台 (Core Member Auth)</option>
  <option value="即时零售平台">外卖 (Eats) 平台</option>
  <option value="广告工程">广告工程</option>
  <option value="营销引擎">营销引擎</option>
