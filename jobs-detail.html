@@ -174,20 +174,7 @@ body {
   opacity: 0.9;
 }
 
-/* 水印：CSS 背景实现全屏铺满，与 hiring.html 一致 */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -20px;
-  right: -20px;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200' viewBox='0 0 340 200'><text x='170' y='100' fill='rgba(0,0,0,0.13)' font-size='15' font-weight='600' font-family='Arial,sans-serif' text-anchor='middle' dominant-baseline='middle' transform='rotate(-22 170 100)'>uger501@foxmail.com</text></svg>");
-  background-repeat: repeat;
-  background-size: 340px 200px;
-}
+/* 水印已移除 */
 
 /* Toast */
 .toast {
